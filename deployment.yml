@@ -1,13 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: "1"
-  generation: 2
-  labels:
-    app: jenkinks-kubernetes-demo-apache2-hello-web
   name: jenkinks-kubernetes-demo-apache2-hello-web
-  namespace: default
+
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -26,7 +21,7 @@ spec:
         app: jenkinks-kubernetes-demo-apache2-hello-web
     spec:
       containers:
-      - image: gcr.io/tcs-cloud-devops/jenkins-kubernetes-demo:development
+      - image: gcr.io/tcs-cloud-devops/demo-apache2:latest
         imagePullPolicy: IfNotPresent
         name: apache2-sample
       dnsPolicy: ClusterFirst
