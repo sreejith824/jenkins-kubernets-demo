@@ -12,9 +12,6 @@ pipeline {
   agent any
     stages {
     stage('Cloning Git') {
-      steps{
-        sh "docker run -it -d -p 8084:80 $registry:$BUILD_NUMBER"
-      }
       steps {
         git 'https://github.com/sreejith824/jenkins-kubernets-demo.git'
       }
