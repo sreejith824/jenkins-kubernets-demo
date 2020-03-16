@@ -21,7 +21,7 @@ spec:
         app: jenkinks-kubernetes-demo-apache2-hello-web
     spec:
       containers:
-      - image: gcr.io/tcs-cloud-devops/demo-apache2:latest
+      - image: gcr.io/tcs-cloud-devops/demo-apache2-kube:latest
         imagePullPolicy: IfNotPresent
         name: apache2-sample
       dnsPolicy: ClusterFirst
